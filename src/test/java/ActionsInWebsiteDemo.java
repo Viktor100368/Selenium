@@ -24,6 +24,7 @@ public class ActionsInWebsiteDemo {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+           driver.close();
             driver.quit();
         }
 
