@@ -22,8 +22,8 @@ public class WorkingWithNewWindowsDemo {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.id("windowButton")).click();
         String mainPage = driver.getWindowHandle();
-        Set<String> allWindowHandle = driver.getWindowHandles();
-        Iterator<String> iterator = allWindowHandle.iterator();
+        Set<String> allWindowHadle = driver.getWindowHandles();
+        Iterator<String> iterator  = allWindowHadle.iterator();
         while(iterator.hasNext()){
             String element = iterator.next();
             if(!mainPage.equalsIgnoreCase(element)){

@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.function.Function;
 
 public class WorkingWithFluentWaitDemo {
@@ -17,9 +18,10 @@ public class WorkingWithFluentWaitDemo {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/dynamic-properties");
-        FluentWait<WebDriver> wait=new FluentWait<>(driver);
-        wait.pollingEvery(Duration.ofMillis(250));
-        wait.withTimeout(Duration.ofMillis(2000));
+        FluentWait<WebDriver> wait = new FluentWait<>(driver);
+        wait.pollingEvery(Duration.ofMillis(200));
+        wait.withTimeout(Duration.ofSeconds(10));
+        wait.ignoring(NoSuchElementException.class);
         String str = "Color Change";
         Function<WebDriver,Boolean> function = new Function<WebDriver, Boolean>() {
             @Override
