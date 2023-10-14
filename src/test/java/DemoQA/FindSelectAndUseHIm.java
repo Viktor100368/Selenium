@@ -21,6 +21,10 @@ public class FindSelectAndUseHIm {
         //se.selectByIndex(3);
         //se.selectByValue("3");
         se.selectByVisibleText("Yellow");
+        List<WebElement> selectedOption = se.getAllSelectedOptions();
+        for(WebElement selOpt: selectedOption) {
+            System.out.println("selected option is - " + selOpt.getText());
+        }
         //standart multiSelect choise
         WebElement select = driver.findElement(By.xpath("//select[@id=\"cars\"]"));
         Select mulSe = new Select(select);
@@ -48,6 +52,7 @@ public class FindSelectAndUseHIm {
             throw new RuntimeException(e);
         }
         mulSe.deselectByIndex(2);
+//        mulSe.deselectAll();
         selectedOptions = mulSe.getAllSelectedOptions();
         for(WebElement we:selectedOptions)
         System.out.println("after deselect = "+we.getText());
