@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class FindElementById {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","C:/Tools/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:/Tools/chromedriver122/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         String url = "https://demoqa.com/text-box/";

@@ -1,4 +1,4 @@
-import com.beust.ah.A;
+//import com.beust.ah.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class ActionsInWebsiteDemo {
     public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver","C:\\Tools\\chromedriver122\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         try {
